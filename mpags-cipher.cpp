@@ -33,14 +33,16 @@ int main()
 	//Ex5-User Input
 	std::string str,str2;
 	char inChar{'x'};
+	char arrChar[]={'0','1','2','3','4','5','6','7','8','9'};
+	std::string arrStr[]={"zero", "one","two","three","four","five","six","seven","eight","nine"};
 	while(std::cin>>inChar)
 	{
 			if (isalnum(inChar))
 			{
+				//LONG WINDED METHOD
 				switch (inChar)
 				{
-					//LONG WINDED METHOD
-					case '0': str2="zero";
+					/*case '0': str2="zero";
 						break;
 					case '1': str2="one";
 						break;
@@ -63,7 +65,25 @@ int main()
 					default:
 						inChar=toupper(inChar);
 						str2=inChar;
+						break;*/
+
+
+
+				}
+				//MEDIUM METHOD
+				for (int i=0; i<10; i++)
+				{
+					if (inChar==arrChar[i])
+					{
+						str2=arrStr[i];
 						break;
+					}
+					else
+					{
+						inChar=toupper(inChar);
+						str2=inChar;
+						break;
+					}
 				}
 				str+=str2 +' ';
 			}
