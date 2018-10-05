@@ -5,7 +5,9 @@ int main()
 {
 	//two ways to say hello
 	std::cout<<"\n Hello World \n \n";
-	std::string msg {"Hello \n"};
+	std::string msg {"Hello "};
+	char lll{'W'};
+	msg+=lll;
 	std::cout<<msg<<std::endl;
 
 	//testing the const doesn't compile
@@ -29,45 +31,43 @@ int main()
 	std::cout<<" c/(double)b = "<<e<<"\n"<<std::endl;
 
 	//Ex5-User Input
-	std::string str;
+	std::string str,str2;
 	char inChar{'x'};
 	while(std::cin>>inChar)
 	{
-			switch (inChar) {
-				case 0: inChar='0';
-				break;
-				case 1: inChar='1';
-				break;
-				case 2: inChar='2';
-				break;
-				case 3: inChar='3';
-				break;
-				case 4: inChar='4';
-				break;
-				case 5: inChar='5';
-				break;
-				case 6: inChar='6';
-				break;
-				case 7: inChar='7';
-				break;
-				case 8: inChar='8';
-				break;
-				case 9: inChar='9';
-				break;
-			}
-			if (isalpha(inChar))
+			if (isalnum(inChar))
 			{
-				inChar=toupper(inChar);
-				str+=inChar;
-			}
-			else
-			{
-				str+=inChar;
+				switch (inChar)
+				{
+					//LONG WINDED METHOD
+					case '0': str2="zero";
+						break;
+					case '1': str2="one";
+						break;
+					case '2': str2="two";
+						break;
+					case '3': str2="three";
+						break;
+					case '4': str2="four";
+						break;
+					case '5': str2="five";
+						break;
+					case '6': str2="six";
+						break;
+					case '7': str2="seven";
+						break;
+					case '8': str2="eight";
+						break;
+					case '9': str2="nine";
+						break;
+					default:
+						inChar=toupper(inChar);
+						str2=inChar;
+						break;
+				}
+				str+=str2 +' ';
 			}
 	}
 	std::cout<<str<<std::endl;
-
-
-
 	return 0;
 }
